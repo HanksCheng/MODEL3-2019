@@ -11,12 +11,6 @@ public class Main {
             data[i]=scn.nextInt();
         }
 
-//        for (int i=0;i< data.length;i++){
-//            for(int j=data.length-1;j>=0;j--){
-//                datasum[i]+=(int)(data[i].charAt(j));
-//            }
-//        }
-
         for (int i=0;i<data.length;i++){
             tmp=data[i];
             while (tmp!=0){
@@ -24,13 +18,6 @@ public class Main {
                 tmp=tmp/10;
             }
         }
-//        for (int i=0;i<data.length;i++){
-//            System.out.print(data[i]+" ");
-//        }
-//        System.out.println();
-//        for (int i=0;i<data.length;i++){
-//            System.out.print(datasum[i]+" ");
-//        }
 
 
         for (int i=0;i<data.length;i++){
@@ -47,7 +34,6 @@ public class Main {
             }
         }
         for (int k=0;k<data.length;k++){
-//            System.out.print(datasum[k]+" ");
             System.out.print(data[k]+" ");
         }
     }
