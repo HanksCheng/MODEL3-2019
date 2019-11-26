@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scn =new Scanner(System.in);
+        int n =scn.nextInt();
+        int data[] [] =new int[n][n];
+        boolean check =true;
+        int count =1;
+        int y=0;
+
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                data[i][y]=count;
+                count++;
+
+
+
+                if (check){  //如果是true的話，y值會遞增
+                    y++;      //
+                    if (y>=n-1){
+                        check=false;  //y如果超過陣列大小則變false
+                    }
+                }
+
+
+
+                else { //遞減
+                    y--;
+                    if (y==0){
+                        check=true;
+                    }
+                }
+            }
+
+            if (check){
+                y=0; //確保不會out of index
+            }
+            else {
+                y=n-1; //同上
+            }
+        }
+
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                System.out.print(data[i][j]+"\t");
+            }
+            System.out.println();
+        }//列印
+
+        System.out.println();
+        y=0; //初始化
+        check=true;
+        count=1;
+
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                data[y][i]=count; //幾乎同上 y i 對調
+                count++;
+                if (check){
+                    y++;
+                    if (y>=n-1){
+                        check=false;
+                    }
+                }
+                else {
+                    y--;
+                    if (y==0){
+                        check=true;
+                    }
+                }
+            }
+            if (check){
+                y=0;
+            }
+            else {
+                y=n-1;
+            }
+        }
+        for (int i=0;i<n;i++){
+            for (int j=0;j<n;j++){
+                System.out.print(data[i][j]+"\t");
+            }
+            System.out.println();
+        }
+
+    }
+}
